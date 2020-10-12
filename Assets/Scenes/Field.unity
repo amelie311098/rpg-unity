@@ -775,12 +775,12 @@ GameObject:
   - component: {fileID: 807490020}
   - component: {fileID: 807490019}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &807490018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1022,14 +1022,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049098125}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 647.8, y: 44.37, z: 844.9444}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children:
   - {fileID: 2058919134}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1049098130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,7 +1141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1403741604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1382,12 +1382,12 @@ GameObject:
   - component: {fileID: 1533106945}
   - component: {fileID: 1533106944}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: MainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1533106943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1688,8 +1688,9 @@ GameObject:
   - component: {fileID: 1766143915}
   - component: {fileID: 1766143914}
   - component: {fileID: 1766143913}
+  - component: {fileID: 1766143917}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1763,12 +1764,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766143912}
   m_LocalRotation: {x: -0.01745245, y: 0, z: 0, w: 0.99984777}
-  m_LocalPosition: {x: 647.8, y: 41.4, z: 815.702}
+  m_LocalPosition: {x: 647.8, y: 43.89, z: 837.57}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -2, y: 0, z: 0}
+--- !u!114 &1766143917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766143912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f8853b594e10149bbe8968a49b1563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1049098125}
+  text_box: {fileID: 1403741603}
+  npc_name: {fileID: 807490017}
+  npc_text: {fileID: 1533106942}
+  name: Marchand
+  dialogues:
+  - Hello ! Nice to meet you!
+  - Good bye!
 --- !u!1 &2058919131
 GameObject:
   m_ObjectHideFlags: 0
