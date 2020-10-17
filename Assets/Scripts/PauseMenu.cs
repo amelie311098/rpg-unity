@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject menu_buttons;
     public GameObject commands;
     public GameObject settings;
+    public GameObject change_commands;
 
     enum State
     {
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         pause,
         commands,
         settings,
+        change_commands,
     }
 
     private State state;
@@ -50,6 +52,11 @@ public class PauseMenu : MonoBehaviour
                     settings.SetActive(false);
                     state = State.pause;
                     break;
+                case State.change_commands:
+                    settings.SetActive(true);
+                    change_commands.SetActive(false);
+                    state = State.settings;
+                    break;
                 default:
                     break;
             }
@@ -68,5 +75,19 @@ public class PauseMenu : MonoBehaviour
         menu_buttons.SetActive(false);
         settings.SetActive(true);
         state = State.commands;
+    }
+
+    public void GoChangeCommands()
+    {
+        settings.SetActive(false);
+        change_commands.SetActive(true);
+        state = State.change_commands;
+    }
+
+    public void FromChangeCommands()
+    {
+        settings.SetActive(true);
+        change_commands.SetActive(false);
+        state = State.settings;
     }
 }

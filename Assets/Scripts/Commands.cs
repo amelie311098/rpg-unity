@@ -16,6 +16,8 @@ public class Commands : MonoBehaviour
     public KeyCode RotateLeft = KeyCode.A;
     public KeyCode RotateRight = KeyCode.D;
 
+    public int ACTIONS_INDEX = 6;
+
     public Dictionary<string, KeyCode> actions;
 
     public void Start()
