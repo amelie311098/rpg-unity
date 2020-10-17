@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(commands_config.pause_menu))
+        if (Input.GetKeyDown(commands_config.actions["pause menu"]))
         {
             switch(state)
             {

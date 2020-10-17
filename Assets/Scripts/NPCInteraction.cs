@@ -26,7 +26,7 @@ public class NPCInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(commands.action))
+        if (Input.GetKeyDown(commands.actions["talk"]))
         {
             if (ComputeDistance() < 3)
             {

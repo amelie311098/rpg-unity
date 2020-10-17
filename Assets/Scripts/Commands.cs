@@ -12,7 +12,12 @@ public class Commands : MonoBehaviour
     public KeyCode RotateLeft = KeyCode.A;
     public KeyCode RotateRight = KeyCode.D;
 
-    public KeyCode action = KeyCode.F;
+    public Dictionary<string, KeyCode> actions;
 
-    public KeyCode pause_menu = KeyCode.Escape;
+    public void Start()
+    {
+        actions = new Dictionary<string, KeyCode>();
+        actions.Add("talk", KeyCode.F);
+        actions.Add("pause menu", KeyCode.Escape);
+    }
 }
