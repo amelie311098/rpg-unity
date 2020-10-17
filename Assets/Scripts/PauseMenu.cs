@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public Commands commands_config;
+
     public GameObject pause_panel;
     public GameObject menu_buttons;
     public GameObject commands;
@@ -26,7 +28,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(commands_config.pause_menu))
         {
             switch(state)
             {

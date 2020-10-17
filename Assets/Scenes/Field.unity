@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499498ecee72f404aac7ee019f646091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands_config: {fileID: 1090485628}
   pause_panel: {fileID: 812099792}
   menu_buttons: {fileID: 342630119}
   commands: {fileID: 1240622635}
@@ -1484,6 +1485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children:
   - {fileID: 2058919134}
+  - {fileID: 1090485627}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1499,6 +1501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281608a25167d734f92153d1041c48c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands: {fileID: 1090485628}
 --- !u!54 &1049098131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1515,6 +1518,57 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1090485626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090485627}
+  - component: {fileID: 1090485628}
+  m_Layer: 0
+  m_Name: Commands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1090485627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090485626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1049098129}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1090485628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090485626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d306c71813065a4381b127fb73c5b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpArrow: 105
+  LeftArrow: 106
+  RightArrow: 108
+  DownArrow: 107
+  RotateLeft: 97
+  RotateRight: 100
+  action: 102
+  pause_menu: 27
 --- !u!1 &1240622635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8853b594e10149bbe8968a49b1563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands: {fileID: 1090485628}
   player: {fileID: 1049098125}
   text_box: {fileID: 1403741603}
   npc_name: {fileID: 807490017}

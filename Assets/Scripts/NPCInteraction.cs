@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NPCInteraction : MonoBehaviour
 {
+    public Commands commands;
+
     public GameObject player;
     public GameObject text_box;
     public GameObject npc_name;
@@ -24,7 +26,7 @@ public class NPCInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(commands.action))
         {
             if (ComputeDistance() < 3)
             {

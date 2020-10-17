@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private float speed_rotation = 20f;
     private Rigidbody rigidbody;
 
+    public Commands commands;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,22 +27,22 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 relative = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(commands.UpArrow))
         {
             // forward
             relative += transform.forward * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(commands.LeftArrow))
         {
             // left
             relative += transform.right * -1 * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(commands.DownArrow))
         {
             // backward
             relative += transform.forward * -1 * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(commands.RightArrow))
         {
             // right
             relative += transform.right * speed * Time.deltaTime;
@@ -52,11 +54,11 @@ public class PlayerController : MonoBehaviour
     private void Turn()
     {
         float direction = 0;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(commands.RotateLeft))
         {
             direction = -1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(commands.RotateRight))
         {
             direction = 1;
         }
