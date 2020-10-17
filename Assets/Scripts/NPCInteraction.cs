@@ -24,20 +24,29 @@ public class NPCInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && ComputeDistance() < 3)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            if (line_index == 0)
+            if (ComputeDistance() < 3)
             {
-                npc_name.GetComponent<Text>().text = name;
-                SetDialogueLine();
-                SetDialogue(true);
-            }
-            else if (line_index < dialogues.Count)
-            {
-                SetDialogueLine();
+                if (line_index == 0)
+                {
+                    npc_name.GetComponent<Text>().text = name;
+                    SetDialogueLine();
+                    SetDialogue(true);
+                }
+                else if (line_index < dialogues.Count)
+                {
+                    SetDialogueLine();
+                }
+                else // end of dialogue
+                {
+                    SetDialogue(false);
+                    line_index = 0;
+                }
             }
             else
             {
+                // set end of dialogue
                 SetDialogue(false);
                 line_index = 0;
             }
