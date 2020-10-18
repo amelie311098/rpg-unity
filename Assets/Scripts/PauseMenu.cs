@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject settings;
     public GameObject change_commands;
 
+    public DisplayStats display_stats;
+
     enum State
     {
         game,
@@ -37,20 +39,13 @@ public class PauseMenu : MonoBehaviour
             switch(state)
             {
                 case State.game:
-                    pause_panel.SetActive(true);
-                    menu_buttons.SetActive(true);
-                    state = State.pause;
+                case State.commands:
+                case State.settings:
+                    SetPause();
                     break;
                 case State.pause:
                     pause_panel.SetActive(false);
                     state = State.game;
-                    break;
-                case State.commands:
-                case State.settings:
-                    menu_buttons.SetActive(true);
-                    commands.SetActive(false);
-                    settings.SetActive(false);
-                    state = State.pause;
                     break;
                 case State.change_commands:
                     settings.SetActive(true);
@@ -61,6 +56,17 @@ public class PauseMenu : MonoBehaviour
                     break;
             }
         }
+    }
+
+    void SetPause()
+    {
+        pause_panel.SetActive(true);
+        menu_buttons.SetActive(true);
+        commands.SetActive(false);
+        settings.SetActive(false);
+        state = State.pause;
+
+        display_stats.DisplayAllStats();
     }
 
     public void DisplayCommands()
