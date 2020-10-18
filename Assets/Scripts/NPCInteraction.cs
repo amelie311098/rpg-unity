@@ -7,7 +7,7 @@ public class NPCInteraction : MonoBehaviour
 {
     public Commands commands;
 
-    public GameObject player;
+    GameObject player;
     public GameObject text_box;
     public GameObject npc_name;
     public GameObject npc_text;
@@ -24,10 +24,17 @@ public class NPCInteraction : MonoBehaviour
 
     void Start()
     {
+        // get the player component
+        player = GameObject.FindGameObjectWithTag("Player");
+
         SetDialogue(false);
         dialogue_index = 0;
-        npc_name.GetComponent<Text>().text = name;
         choice_objects = new List<GameObject>();
+
+        // set NPC name
+        npc_name.GetComponent<Text>().text = name;
+
+        // save default opacity of choices
         default_opacity = response_template.GetComponent<Image>().color.a;
     }
 
