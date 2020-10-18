@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class DisplayStats : MonoBehaviour
 {
     public Text money_display;
-    public Money money_manager;
+    Money money_manager;
+
+    void Awake()
+    {
+        money_manager = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Money>();
+    }
 
     public void DisplayAllStats()
     {

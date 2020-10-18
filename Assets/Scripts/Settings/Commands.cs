@@ -7,7 +7,6 @@ public class Commands : MonoBehaviour
 {
     public Text hints;
 
-
     public KeyCode UpArrow = KeyCode.I;
     public KeyCode LeftArrow = KeyCode.J;
     public KeyCode RightArrow = KeyCode.L;
@@ -20,7 +19,7 @@ public class Commands : MonoBehaviour
 
     public Dictionary<string, KeyCode> actions;
 
-    public void Start()
+    void Awake()
     {
         // add actions commands keys
         actions = new Dictionary<string, KeyCode>();

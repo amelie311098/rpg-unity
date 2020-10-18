@@ -15,7 +15,7 @@ public abstract class MyObject : MonoBehaviour
     public string name;
     public ObjectType type;
     public string description;
-    // image
+    public Sprite sprite;
 
 
     GameObject player;

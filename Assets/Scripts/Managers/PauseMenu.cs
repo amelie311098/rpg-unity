@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject commands;
     public GameObject settings;
     public GameObject change_commands;
+    public GameObject inventory;
 
     public DisplayStats display_stats;
 
@@ -21,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         commands,
         settings,
         change_commands,
+        inventory,
     }
 
     private State state;
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
                 case State.game:
                 case State.commands:
                 case State.settings:
+                case State.inventory:
                     SetPause();
                     break;
                 case State.pause:

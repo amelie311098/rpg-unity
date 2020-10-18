@@ -10,9 +10,9 @@ public class DisplayCommands : MonoBehaviour
     public Text rotation_commands;
     public Text action_commands;
 
-    public void Start()
+    void Awake()
     {
-        commands_config = GameObject.FindGameObjectWithTag("CommandsConfig").GetComponent<Commands>();
+        commands_config = Utils.GetCommandConfig();
     }
 
     public void Display()

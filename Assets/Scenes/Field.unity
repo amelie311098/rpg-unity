@@ -353,7 +353,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 18981074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8426ecd48a446d34880d43202c93ad58, type: 3}
+  m_Script: {fileID: 11500000, guid: b54df0fdc393e5c4bb875aaafe1d5b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displacement_template: {fileID: 1723207315}
@@ -697,6 +697,7 @@ MonoBehaviour:
   name: Potion
   type: 0
   description: plus de PV si tu me consommes
+  sprite: {fileID: 21300000, guid: dd9b57e5ec69ec04da31e81971506dd3, type: 3}
 --- !u!1 &109123039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1899,7 @@ MonoBehaviour:
   commands: {fileID: 1240622635}
   settings: {fileID: 1928530506}
   change_commands: {fileID: 18981074}
+  inventory: {fileID: 1864495975}
   display_stats: {fileID: 414524292}
 --- !u!114 &414524292
 MonoBehaviour:
@@ -1912,7 +1914,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money_display: {fileID: 433903359}
-  money_manager: {fileID: 744142973}
 --- !u!1 &423806927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,7 +3144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &812099793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3623,7 +3624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.8999939, y: -0.80000305}
+  m_AnchoredPosition: {x: 0.9000244, y: -0.7999878}
   m_SizeDelta: {x: -88.98993, y: -101.218445}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037401570
@@ -3830,7 +3831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1090485626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d306c71813065a4381b127fb73c5b97, type: 3}
+  m_Script: {fileID: 11500000, guid: ca899d64d67f697418cae44f6328f2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hints: {fileID: 1232678271}
@@ -3968,7 +3969,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240622635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83f19096494461a44b362b555cb5737b, type: 3}
+  m_Script: {fileID: 11500000, guid: 320bc051d6b8a56469fbae9426ff692a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displacement_commands: {fileID: 855766874}
@@ -3991,7 +3992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1279050634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4493,8 +4494,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414524291}
-        m_MethodName: GoToSettings
+      - m_Target: {fileID: 1864495979}
+        m_MethodName: DisplayObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5090,7 +5091,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1568260760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1864495979}
+        m_MethodName: DestroyTmpObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1568260760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5819,13 +5831,14 @@ GameObject:
   - component: {fileID: 1864495976}
   - component: {fileID: 1864495978}
   - component: {fileID: 1864495977}
+  - component: {fileID: 1864495979}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1864495976
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5885,6 +5898,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864495975}
   m_CullTransparentMesh: 0
+--- !u!114 &1864495979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864495975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ee46e58f9637648bfcbb340b8c4e24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  object_template: {fileID: 1843532122}
 --- !u!1 &1867459353
 GameObject:
   m_ObjectHideFlags: 0

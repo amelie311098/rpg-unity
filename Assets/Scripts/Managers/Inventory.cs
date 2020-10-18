@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         inventory = new List<MyObject>();
-        StartCoroutine(Log());
+        //StartCoroutine(Log());
     }
 
     // Update is called once per frame
@@ -31,5 +31,10 @@ public class Inventory : MonoBehaviour
     public void AddToInventory(MyObject obj)
     {
         inventory.Add(obj);
+    }
+
+    public List<MyObject> GetSubListObjects(uint max_size)
+    {
+        return inventory.GetRange(0, (int)Mathf.Min(inventory.Count, max_size));
     }
 }

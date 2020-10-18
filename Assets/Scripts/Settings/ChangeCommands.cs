@@ -14,9 +14,15 @@ public class ChangeCommands : MonoBehaviour
 
     private List<KeyCode> avalaible_keys = null;
 
-    public void Start()
+    void Awake()
     {
         commands_config = Utils.GetCommandConfig();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void Enable()

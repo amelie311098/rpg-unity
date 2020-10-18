@@ -19,6 +19,6 @@ public class Utils : MonoBehaviour
 
     public static Commands GetCommandConfig()
     {
-        return GameObject.FindGameObjectWithTag("CommandsConfig").GetComponent<Commands>();
+        return GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Commands>();
     }
 }
