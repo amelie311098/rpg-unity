@@ -149,10 +149,10 @@ public class ChangeCommands : MonoBehaviour
         commands_config.RotateLeft = GetKeyFromOption(setup_config[4]);
         commands_config.RotateRight = GetKeyFromOption(setup_config[5]);
 
-        int option_index = commands_config.ACTIONS_INDEX;
-        /*foreach (string key in commands_config.actions.Keys)
+        for (int option_index = commands_config.ACTIONS_INDEX; option_index < setup_config.Count; ++option_index)
         {
-            commands_config.actions[key] = GetKeyFromOption(setup_config[option_index++]);
-        }*/
+            string key = setup_config[option_index].GetComponent<Text>().text;
+            commands_config.actions[key] = GetKeyFromOption(setup_config[option_index]);
+        }
     }
 }
