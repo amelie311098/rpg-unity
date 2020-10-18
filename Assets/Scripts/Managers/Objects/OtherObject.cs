@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OtherObject : MyObject
 {
-    void Start()
+    public override void Start()
     {
         type = ObjectType.other;
         base.Start();

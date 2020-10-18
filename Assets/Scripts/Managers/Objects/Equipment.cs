@@ -6,7 +6,7 @@ public class Equipment : MyObject
 {
     // stats
 
-    void Start()
+    public override void Start()
     {
         type = ObjectType.equipment;
         base.Start();

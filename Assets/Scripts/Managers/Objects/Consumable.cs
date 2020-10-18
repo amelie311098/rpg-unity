@@ -6,7 +6,7 @@ public class Consumable : MyObject
 {
     // given bonus
 
-    void Start()
+    public override void Start()
     {
         type = ObjectType.consumable;
         base.Start();

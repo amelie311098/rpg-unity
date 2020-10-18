@@ -62,12 +62,13 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void SetPause()
+    public void SetPause()
     {
         pause_panel.SetActive(true);
         menu_buttons.SetActive(true);
         commands.SetActive(false);
         settings.SetActive(false);
+        inventory.SetActive(false);
         state = State.pause;
 
         display_stats.DisplayAllStats();
@@ -99,5 +100,12 @@ public class PauseMenu : MonoBehaviour
         settings.SetActive(true);
         change_commands.SetActive(false);
         state = State.settings;
+    }
+
+    public void GoToInventory()
+    {
+        menu_buttons.SetActive(false);
+        inventory.SetActive(true);
+        state = State.inventory;
     }
 }

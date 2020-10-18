@@ -21,7 +21,7 @@ public abstract class MyObject : MonoBehaviour
     GameObject player;
     Commands commands_config;
 
-    public void Start()
+    public virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         commands_config = Utils.GetCommandConfig();

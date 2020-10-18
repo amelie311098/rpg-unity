@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestObject : MyObject
 {
-    void Start()
+    public override void Start()
     {
         type = ObjectType.quest;
     }
