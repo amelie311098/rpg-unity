@@ -146,5 +146,16 @@ public class ChangeCommands : MonoBehaviour
             string key = setup_config[option_index].GetComponent<Text>().text;
             commands_config.actions[key] = GetKeyFromOption(setup_config[option_index]);
         }
+
+        DestroyTmpObjects();
+    }
+
+    void DestroyTmpObjects()
+    {
+        foreach (GameObject e in setup_config)
+        {
+            Destroy(e);
+        }
+        setup_config.Clear();
     }
 }
