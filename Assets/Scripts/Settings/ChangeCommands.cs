@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ChangeCommands : MonoBehaviour
 {
-    public Commands commands_config;
+    Commands commands_config;
 
     public GameObject displacement_template;
     public GameObject action_template;
@@ -13,6 +13,11 @@ public class ChangeCommands : MonoBehaviour
     private List<GameObject> setup_config = null;
 
     private List<KeyCode> avalaible_keys = null;
+
+    public void Start()
+    {
+        commands_config = Utils.GetCommandConfig();
+    }
 
     public void Enable()
     {

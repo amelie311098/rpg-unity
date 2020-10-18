@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public Commands commands_config;
+    Commands commands_config;
 
     public GameObject pause_panel;
     public GameObject menu_buttons;
@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         state = State.game;
+        commands_config = Utils.GetCommandConfig();
     }
 
     // Update is called once per frame

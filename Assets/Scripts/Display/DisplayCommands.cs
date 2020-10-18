@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class DisplayCommands : MonoBehaviour
 {
-    public Commands commands_config;
+    Commands commands_config;
     public Text displacement_commands;
     public Text rotation_commands;
     public Text action_commands;
+
+    public void Start()
+    {
+        commands_config = GameObject.FindGameObjectWithTag("CommandsConfig").GetComponent<Commands>();
+    }
 
     public void Display()
     {

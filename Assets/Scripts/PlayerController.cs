@@ -8,12 +8,13 @@ public class PlayerController : MonoBehaviour
     private float speed_rotation = 20f;
     private Rigidbody rigidbody;
 
-    public Commands commands;
+    Commands commands;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        commands = Utils.GetCommandConfig();
     }
 
     // Update is called once per frame

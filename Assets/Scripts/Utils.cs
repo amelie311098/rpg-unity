@@ -11,4 +11,14 @@ public class Utils : MonoBehaviour
         duplicate.transform.position = obj.transform.position;
         return duplicate;
     }
+
+    public static float ComputeDistance(Transform t1, Transform t2)
+    {
+        return Vector3.Distance(t1.position, t2.position);
+    }
+
+    public static Commands GetCommandConfig()
+    {
+        return GameObject.FindGameObjectWithTag("CommandsConfig").GetComponent<Commands>();
+    }
 }

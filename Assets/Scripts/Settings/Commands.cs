@@ -24,8 +24,9 @@ public class Commands : MonoBehaviour
     {
         // add actions commands keys
         actions = new Dictionary<string, KeyCode>();
-        actions.Add("talk", KeyCode.F);
         actions.Add("pause menu", KeyCode.Escape);
+        actions.Add("talk", KeyCode.F);
+        actions.Add("take object", KeyCode.G);
         actions.Add("choose up response", KeyCode.UpArrow);
         actions.Add("choose down response", KeyCode.DownArrow);
 

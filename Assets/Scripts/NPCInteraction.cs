@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public Commands commands;
+    Commands commands;
 
     GameObject player;
     public GameObject text_box;
@@ -26,6 +26,8 @@ public class NPCInteraction : MonoBehaviour
     {
         // get the player component
         player = GameObject.FindGameObjectWithTag("Player");
+
+        commands = Utils.GetCommandConfig();
 
         SetDialogue(false);
         dialogue_index = 0;
@@ -95,7 +97,7 @@ public class NPCInteraction : MonoBehaviour
 
     float ComputeDistance()
     {
-        return Vector3.Distance(player.GetComponent<Transform>().position, transform.position);
+        return Utils.ComputeDistance(player.GetComponent<Transform>(), transform);
     }
 
     void SetDialogue(bool show)
