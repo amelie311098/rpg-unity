@@ -101,17 +101,9 @@ public class ChangeCommands : MonoBehaviour
         }
     }
 
-    GameObject DuplicateObject(GameObject obj)
-    {
-        GameObject duplicate = Instantiate<GameObject>(obj);
-        duplicate.transform.SetParent(obj.transform.parent);
-        duplicate.transform.position = obj.transform.position;
-        return duplicate;
-    }
-
     GameObject NewOption(GameObject command_object, string command_name, KeyCode used)
     {
-        GameObject duplicate = DuplicateObject(command_object);
+        GameObject duplicate = Utils.DuplicateObject(command_object);
 
         Text text = duplicate.GetComponent<Text>();
         text.text = command_name;

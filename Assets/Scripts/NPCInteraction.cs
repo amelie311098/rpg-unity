@@ -12,15 +12,20 @@ public class NPCInteraction : MonoBehaviour
     public GameObject npc_name;
     public GameObject npc_text;
 
-    public string name;
-    public List<string> dialogues;
+    public GameObject response_template;
 
-    private int line_index;
+    public string name;
+    public List<Dialogue> dialogues;
+
+    private int dialogue_index;
+    private List<GameObject> choice_objects;
 
     void Start()
     {
         SetDialogue(false);
-        line_index = 0;
+        dialogue_index = 0;
+        npc_name.GetComponent<Text>().text = name;
+        choice_objects = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -30,27 +35,34 @@ public class NPCInteraction : MonoBehaviour
         {
             if (ComputeDistance() < 3)
             {
-                if (line_index == 0)
+                if (dialogues.Count <= dialogue_index)
                 {
-                    npc_name.GetComponent<Text>().text = name;
-                    SetDialogueLine();
-                    SetDialogue(true);
+                    // end of dialogue available
+                    // loop on the last one
+                    dialogue_index = dialogues.Count - 1;
+                    dialogues[dialogue_index].ResetDialogue();
                 }
-                else if (line_index < dialogues.Count)
-                {
-                    SetDialogueLine();
-                }
-                else // end of dialogue
+
+                dialogues[dialogue_index].SetNext();
+                RemoveOldChoices();
+
+                if (dialogues[dialogue_index].IsEnd()) // end of dialogue
                 {
                     SetDialogue(false);
-                    line_index = 0;
+                    ++dialogue_index;
+                    return;
                 }
+
+                SetDialogue(true);
+                SetDialogueLine();
+                SetChoices();
             }
             else
             {
                 // set end of dialogue
                 SetDialogue(false);
-                line_index = 0;
+                dialogues[dialogue_index].ResetDialogue();
+                RemoveOldChoices();
             }
         }
     }
@@ -69,6 +81,35 @@ public class NPCInteraction : MonoBehaviour
 
     void SetDialogueLine()
     {
-        npc_text.GetComponent<Text>().text = dialogues[line_index++];
+        Debug.Log(dialogues[dialogue_index].GetSentence());
+        npc_text.GetComponent<Text>().text = dialogues[dialogue_index].GetSentence();
+    }
+
+    void SetChoices()
+    {
+        List<string> choices = dialogues[dialogue_index].GetChoices();
+        if (choices.Count == 0)
+            return;
+
+        int vspace = 0;
+        foreach (string choice in choices)
+        {
+            GameObject choice_object = Utils.DuplicateObject(response_template);
+            choice_object.GetComponentInChildren<Text>().text = choice;
+            choice_object.GetComponent<RectTransform>().anchoredPosition -= new Vector2(0, vspace);
+            choice_object.SetActive(true);
+            choice_objects.Add(choice_object);
+
+            vspace += 50;
+        }
+    }
+
+    void RemoveOldChoices()
+    {
+        foreach (GameObject obj in choice_objects)
+        {
+            Destroy(obj);
+        }
+        choice_objects.Clear();
     }
 }
