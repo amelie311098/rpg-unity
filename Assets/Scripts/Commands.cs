@@ -26,6 +26,8 @@ public class Commands : MonoBehaviour
         actions = new Dictionary<string, KeyCode>();
         actions.Add("talk", KeyCode.F);
         actions.Add("pause menu", KeyCode.Escape);
+        actions.Add("choose up response", KeyCode.UpArrow);
+        actions.Add("choose down response", KeyCode.DownArrow);
 
         // setup hint display
         hints.text = $"Press {actions["pause menu"]} for pause menu";
