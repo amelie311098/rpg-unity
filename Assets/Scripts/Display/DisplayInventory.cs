@@ -26,10 +26,13 @@ public class DisplayInventory : MonoBehaviour
 
     void Awake()
     {
-        inventory_manager = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
-        object_displayed = new List<GameObject>();
-        size = object_template.GetComponent<RectTransform>().sizeDelta;
-        item_selected = null;
+        if (inventory_manager is null)
+        {
+            inventory_manager = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Inventory>();
+            object_displayed = new List<GameObject>();
+            size = object_template.GetComponent<RectTransform>().sizeDelta;
+            item_selected = null;
+        }
     }
 
     // Start is called before the first frame update
@@ -118,5 +121,7 @@ public class DisplayInventory : MonoBehaviour
     public void ItemReturnClick()
     {
         item_info_panel.SetActive(false);
+        DestroyTmpObjects();
+        DisplayObjects();
     }
 }

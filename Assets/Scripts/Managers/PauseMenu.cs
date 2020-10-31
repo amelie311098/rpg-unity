@@ -44,7 +44,6 @@ public class PauseMenu : MonoBehaviour
                 case State.game:
                 case State.commands:
                 case State.settings:
-                case State.inventory:
                     SetPause();
                     break;
                 case State.pause:
@@ -55,6 +54,10 @@ public class PauseMenu : MonoBehaviour
                     settings.SetActive(true);
                     change_commands.SetActive(false);
                     state = State.settings;
+                    break;
+                case State.inventory:
+                    inventory.GetComponent<DisplayInventory>().DestroyTmpObjects();
+                    SetPause();
                     break;
                 default:
                     break;
