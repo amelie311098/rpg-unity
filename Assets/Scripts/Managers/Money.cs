@@ -32,5 +32,9 @@ public class Money : MonoBehaviour
         {
             money_possess = uint.MaxValue;
         }
+        else
+        {
+            money_possess = tmp;
+        }
     }
 }

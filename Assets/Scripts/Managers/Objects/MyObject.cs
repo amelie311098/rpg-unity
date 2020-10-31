@@ -12,11 +12,10 @@ public enum ObjectType
 
 public abstract class MyObject : MonoBehaviour
 {
-    public string name;
+    public string objname;
     public ObjectType type;
     public string description;
     public Sprite sprite;
-
 
     GameObject player;
     Commands commands_config;
@@ -45,5 +44,10 @@ public abstract class MyObject : MonoBehaviour
             // remove from scene
             Destroy(this.gameObject);
         }
+    }
+
+    public virtual void Use()
+    {
+        Debug.Log("no action");
     }
 }

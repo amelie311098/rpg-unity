@@ -451,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &31956233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -626,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: 134}
-  m_SizeDelta: {x: 74.07349, y: 78.81055}
+  m_AnchoredPosition: {x: -75, y: 135.29}
+  m_SizeDelta: {x: 74.07349, y: 76.23172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42343336
 MonoBehaviour:
@@ -850,10 +850,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe4fc03754c4e14ba42fe61a30aba5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Dague
+  objname: basic dague
   type: 1
   description: Pour tuer plus facilement tes ennemis
   sprite: {fileID: 21300000, guid: dd9b57e5ec69ec04da31e81971506dd3, type: 3}
+  bonus_type: 0
+  bonus_value: 20
 --- !u!1 &109123039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1539,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 244170424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1864495979}
+        m_MethodName: ItemReturnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &244170424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3072,8 +3085,9 @@ GameObject:
   - component: {fileID: 616520233}
   - component: {fileID: 616520235}
   - component: {fileID: 616520234}
+  - component: {fileID: 616520236}
   m_Layer: 5
-  m_Name: Image
+  m_Name: potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3135,6 +3149,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616520232}
   m_CullTransparentMesh: 0
+--- !u!114 &616520236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616520232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 616520234}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1864495979}
+        m_MethodName: ShowItemDetail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &659169920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,7 +3589,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741033683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1864495979}
+        m_MethodName: ItemDeleteClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &741033683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,10 +4331,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe4fc03754c4e14ba42fe61a30aba5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Potion
+  objname: life potion
   type: 0
   description: plus de PV si tu me consommes
   sprite: {fileID: 21300000, guid: 46845df768a9ff74a8444f3bd32cb8a6, type: 3}
+  bonus_type: 0
+  bonus_value: 30
 --- !u!65 &1018543647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4341,7 +4422,6 @@ GameObject:
   - component: {fileID: 1037401569}
   - component: {fileID: 1037401571}
   - component: {fileID: 1037401570}
-  - component: {fileID: 1037401572}
   m_Layer: 5
   m_Name: Items
   m_TagString: Untagged
@@ -4406,49 +4486,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037401568}
   m_CullTransparentMesh: 0
---- !u!114 &1037401572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037401568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1037401570}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1049098125
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,7 +5927,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1551300785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1864495975}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1551300785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6922,6 +6970,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   object_template: {fileID: 616520232}
+  item_info_panel: {fileID: 31956232}
+  item_image: {fileID: 42343336}
+  item_name: {fileID: 1180957823}
+  item_number: {fileID: 1815211884}
+  item_type: {fileID: 305692289}
+  item_description: {fileID: 982092067}
 --- !u!1 &1867459353
 GameObject:
   m_ObjectHideFlags: 0

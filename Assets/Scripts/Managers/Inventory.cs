@@ -37,4 +37,32 @@ public class Inventory : MonoBehaviour
     {
         return inventory.GetRange(0, (int)Mathf.Min(inventory.Count, max_size));
     }
+
+    public List<MyObject> SearchByName(string name)
+    {
+        List<MyObject> objects = new List<MyObject>();
+        foreach (MyObject obj in inventory)
+        {
+            if (obj.objname == name)
+                objects.Add(obj);
+        }
+        return objects;
+    }
+
+    public bool UseObject(MyObject obj)
+    {
+        obj.Use();
+        Debug.Log(obj is Consumable);
+        if (obj is Consumable)
+        {
+            inventory.Remove(obj);
+            return true;
+        }
+        return false;
+    }
+
+    public void RemoveObject(MyObject obj)
+    {
+        inventory.Remove(obj);
+    }
 }
